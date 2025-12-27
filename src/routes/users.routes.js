@@ -5,6 +5,11 @@ const router = Router();
 
 
 
+router.get( "/usersv1", async (req, res) => {
+  const {rows} = await pool.query ('SELECT * FROM users');  
+  res.json(rows);
+});
+
 router.get( "/users", async (req, res) => {
   const {rows} = await pool.query ('SELECT * FROM users');  
   res.json(rows);
